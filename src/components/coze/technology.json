@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_coze_technologies",
+  "info": {
+    "displayName": "technology",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
