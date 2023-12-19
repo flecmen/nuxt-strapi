@@ -5,9 +5,10 @@ export interface CozeTechnology extends Schema.Component {
   info: {
     displayName: 'technology';
     icon: 'cog';
+    description: '';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    name: Attribute.String & Attribute.Required;
   };
 }
 
