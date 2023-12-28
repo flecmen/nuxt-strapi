@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_general_information",
+  "info": {
+    "displayName": "information"
+  },
+  "options": {},
+  "attributes": {
+    "data": {
+      "type": "text"
+    }
+  }
+}

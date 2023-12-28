@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_block_info_blocks",
+  "info": {
+    "displayName": "InfoBlock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "bullet_points": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.information"
+    },
+    "sub_heading": {
+      "type": "string"
+    }
+  }
+}
