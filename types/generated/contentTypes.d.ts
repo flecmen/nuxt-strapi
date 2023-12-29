@@ -683,6 +683,7 @@ export interface ApiCareerPageCareerPage extends Schema.SingleType {
     singularName: 'career-page';
     pluralName: 'career-pages';
     displayName: 'CareerPage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -699,19 +700,19 @@ export interface ApiCareerPageCareerPage extends Schema.SingleType {
           localized: true;
         };
       }>;
-    block1: Attribute.Component<'block.info-block', true> &
+    block1: Attribute.Component<'block.info-block'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    block2: Attribute.Component<'block.info-block', true> &
+    block2: Attribute.Component<'block.info-block'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    block3: Attribute.Component<'block.info-block', true> &
+    block3: Attribute.Component<'block.info-block'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

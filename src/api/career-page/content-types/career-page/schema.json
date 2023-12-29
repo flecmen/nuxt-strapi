@@ -4,7 +4,8 @@
   "info": {
     "singularName": "career-page",
     "pluralName": "career-pages",
-    "displayName": "CareerPage"
+    "displayName": "CareerPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,7 +26,7 @@
     },
     "block1": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -35,7 +36,7 @@
     },
     "block2": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -45,7 +46,7 @@
     },
     "block3": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
