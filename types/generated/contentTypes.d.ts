@@ -742,6 +742,66 @@ export interface ApiCareerPageCareerPage extends Schema.SingleType {
   };
 }
 
+export interface ApiGdprPageGdprPage extends Schema.SingleType {
+  collectionName: 'gdpr_pages';
+  info: {
+    singularName: 'gdpr-page';
+    pluralName: 'gdpr-pages';
+    displayName: 'GDPR page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    heading: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sub_heading: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    blocks: Attribute.Component<'general.rich-text', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gdpr-page.gdpr-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gdpr-page.gdpr-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::gdpr-page.gdpr-page',
+      'oneToMany',
+      'api::gdpr-page.gdpr-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiHomepageHomepage extends Schema.SingleType {
   collectionName: 'homepages';
   info: {
@@ -1030,6 +1090,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::career-page.career-page': ApiCareerPageCareerPage;
+      'api::gdpr-page.gdpr-page': ApiGdprPageGdprPage;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::open-position.open-position': ApiOpenPositionOpenPosition;
       'api::project.project': ApiProjectProject;

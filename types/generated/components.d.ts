@@ -36,12 +36,24 @@ export interface GeneralInformation extends Schema.Component {
   };
 }
 
+export interface GeneralRichText extends Schema.Component {
+  collectionName: 'components_general_rich_texts';
+  info: {
+    displayName: 'rich_text';
+  };
+  attributes: {
+    heading: Attribute.String;
+    data: Attribute.RichText;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'block.info-block': BlockInfoBlock;
       'coze.technology': CozeTechnology;
       'general.information': GeneralInformation;
+      'general.rich-text': GeneralRichText;
     }
   }
 }
