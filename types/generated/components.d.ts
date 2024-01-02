@@ -29,9 +29,10 @@ export interface GeneralInformation extends Schema.Component {
   collectionName: 'components_general_information';
   info: {
     displayName: 'information';
+    description: '';
   };
   attributes: {
-    data: Attribute.Text;
+    data: Attribute.Text & Attribute.Required;
   };
 }
 
