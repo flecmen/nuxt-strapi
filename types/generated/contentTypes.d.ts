@@ -808,6 +808,7 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     singularName: 'homepage';
     pluralName: 'homepages';
     displayName: 'Homepage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -818,7 +819,42 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     };
   };
   attributes: {
-    Title: Attribute.String &
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sub_heading: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    technologies_description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    frontend_text: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    backend_text: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    projects_description: Attribute.Text &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
