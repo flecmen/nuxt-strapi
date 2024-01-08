@@ -1073,6 +1073,68 @@ export interface ApiProjectsPageProjectsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiTechnologyPageTechnologyPage extends Schema.SingleType {
+  collectionName: 'technology_pages';
+  info: {
+    singularName: 'technology-page';
+    pluralName: 'technology-pages';
+    displayName: 'TechnologyPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    frontend_bullet_points: Attribute.Component<'general.information', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    backend_bullet_points: Attribute.Component<'general.information', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::technology-page.technology-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::technology-page.technology-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::technology-page.technology-page',
+      'oneToMany',
+      'api::technology-page.technology-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1095,6 +1157,7 @@ declare module '@strapi/types' {
       'api::open-position.open-position': ApiOpenPositionOpenPosition;
       'api::project.project': ApiProjectProject;
       'api::projects-page.projects-page': ApiProjectsPageProjectsPage;
+      'api::technology-page.technology-page': ApiTechnologyPageTechnologyPage;
     }
   }
 }
